@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+      - ./store_layout.json:/app/store_layout.json
+      - ./pos_transactions.csv:/app/pos_transactions.csv
+      - ./events_output:/app/events_output
+    environment:
+      - DATABASE_URL=sqlite:///./store_intelligence.db
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000

@@ -1,0 +1,28 @@
+{
+  "stores": [
+    {
+      "store_id": "ST1008",
+      "name": "Brigade_Bangalore",
+      "city": "Bangalore",
+      "open_hours": { "open": "10:00", "close": "22:00" },
+      "cameras": [
+        { "camera_id": "CAM_1", "type": "entry_exit", "description": "Main Entry/Exit threshold" },
+        { "camera_id": "CAM_2", "type": "main_floor", "description": "Main floor - Skin & Makeup zones" },
+        { "camera_id": "CAM_3", "type": "billing", "description": "Billing counter area" },
+        { "camera_id": "CAM_4", "type": "main_floor", "description": "Secondary floor - Bath & Hair zones" },
+        { "camera_id": "CAM_5", "type": "entry_exit", "description": "Secondary entry/exit" }
+      ],
+      "zones": [
+        { "zone_id": "ENTRY_ZONE",    "zone_name": "Entry Zone",       "camera_coverage": ["CAM_1","CAM_5"], "x1": 0.0,  "y1": 0.0,  "x2": 0.33, "y2": 0.33 },
+        { "zone_id": "SKIN",          "zone_name": "Skincare",         "camera_coverage": ["CAM_2"],         "x1": 0.33, "y1": 0.0,  "x2": 0.66, "y2": 0.33 },
+        { "zone_id": "HAIR",          "zone_name": "Haircare",         "camera_coverage": ["CAM_4"],         "x1": 0.66, "y1": 0.0,  "x2": 1.0,  "y2": 0.33 },
+        { "zone_id": "FRAGRANCE",     "zone_name": "Fragrance",        "camera_coverage": ["CAM_2"],         "x1": 0.0,  "y1": 0.33, "x2": 0.33, "y2": 0.66 },
+        { "zone_id": "MAKEUP",        "zone_name": "Makeup",           "camera_coverage": ["CAM_2"],         "x1": 0.33, "y1": 0.33, "x2": 0.66, "y2": 0.66 },
+        { "zone_id": "PERSONAL_CARE", "zone_name": "Personal Care",    "camera_coverage": ["CAM_4"],         "x1": 0.66, "y1": 0.33, "x2": 1.0,  "y2": 0.66 },
+        { "zone_id": "BATH_BODY",     "zone_name": "Bath & Body",      "camera_coverage": ["CAM_4"],         "x1": 0.0,  "y1": 0.66, "x2": 0.33, "y2": 1.0  },
+        { "zone_id": "OFFERS",        "zone_name": "Offers & Deals",   "camera_coverage": ["CAM_4"],         "x1": 0.33, "y1": 0.66, "x2": 0.66, "y2": 1.0  },
+        { "zone_id": "BILLING",       "zone_name": "Billing Counter",  "camera_coverage": ["CAM_3"],         "x1": 0.66, "y1": 0.66, "x2": 1.0,  "y2": 1.0  }
+      ]
+    }
+  ]
+}
